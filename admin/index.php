@@ -1,3 +1,14 @@
+<?php session_start();
+
+
+if(!isset($_SESSION['username'])) {
+
+
+	die("you can't go here unless you login <a href='login.php'>login page</a>");
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,20 +25,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- end: Mobile Specific -->
 	
-	<!-- start: Facebook Open Graph -->
-	<meta property="og:title" content=""/>
-	<meta property="og:description" content=""/>
-	<meta property="og:type" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<!-- end: Facebook Open Graph -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
 
-	<!-- start: CSS -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	
-	<!-- end: CSS -->
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -75,10 +76,8 @@
   						</a>
   						<div class="nav-collapse collapse">
   							<ul class="nav">
-  								<li><a class="active" href="index.html">Home</a></li>
-  								<li ><a href="about.html">About</a></li>
-
-
+  								<li><a class="active" href="index.php">Home</a></li>
+  								<li><a class="text-right" href="">welcome <?php echo $_SESSION['username']; ?></a></li>
   							</ul>
   						</div>
   					</div>
@@ -103,39 +102,18 @@
 
 
   						<!-- start: Icon Box Start -->
-  						<div class="span12">
+  						
 
-  							<table class="table table-bordered">
-  								<tr>
-  									<td>title</td>
-  									<td>lorem ipusm</td>
-  								</tr>
-  								<tr>
-  									<td>date</td>
-  									<td>22/44/1903</td>
-  								</tr>
-
-  								<tr>
-  									<td>content</td>
-  									<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet molestiae porro vero alias quis doloremque voluptates laborum tempore nobis consectetur, sed aspernatur cupiditate optio nemo, non aperiam earum neque illum.</td>
-  								</tr>
-
-
-  							</table>
-
-						<form  action="go_to_event.php?event_id=<?php echo $_GET['id']; ?>" method="post">
-  							<label for="">username</label>
-  							<input type="text" name="username" ><br>
-  							<label for="">email</label>
-  							<input type="text" name="email" ><br>
-  							<label for="">phone</label>
-  							<input type="text" name="phone" ><br>
-  							<br>
-  							<button type="submit" class="btn">going</button>
-  						</form>
+  						<div class="span6">
+  							<ul> <h3>
+  								<li><a href="events.php">events</a></li>
+  								<br>
+  								<li><a href="add_event">add event</a></li>
+  								</h3>
+  							</ul>
   						</div>
   						<!-- end: Icon Box -->
-  						
+
 
   					</div>
   					<!-- end: Icon Boxes -->

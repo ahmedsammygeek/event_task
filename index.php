@@ -106,7 +106,22 @@
 					<div class="span6">
 						<a href="">
 							<div class="icons-box-vert">
-							<i class="ico-cup  ico-white circle-color-full big-color"></i>
+							
+							<div class="icons-box-vert-info">
+								<h3>Best choice</h3>
+								
+								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+							<p> 22/09/2015</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						</a>
+					</div>
+
+					<div class="span6">
+						<a href="">
+							<div class="icons-box-vert">
+							
 							<div class="icons-box-vert-info">
 								<h3>Best choice</h3>
 								
