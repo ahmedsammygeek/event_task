@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2015 at 10:10 PM
+-- Generation Time: Apr 26, 2015 at 11:42 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -30,10 +30,15 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `role` varchar(20) NOT NULL,
-  `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -49,20 +54,16 @@ CREATE TABLE IF NOT EXISTS `events` (
   `reached` int(11) NOT NULL,
   `when` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Table structure for table `event_images`
+-- Dumping data for table `events`
 --
 
-CREATE TABLE IF NOT EXISTS `event_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `event_id` int(11) NOT NULL,
-  `image` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+INSERT INTO `events` (`id`, `title`, `content`, `limit`, `reached`, `when`) VALUES
+(1, 'event number 1', 'content about event number 1 here ', 11, 2, '2015-04-08'),
+(2, 'event number 2', 'content of event number 2', 90, 80, '2015-04-01'),
+(3, 'event number 3', 'content of event number 3', 100, 120, '2015-04-08');
 
 -- --------------------------------------------------------
 
