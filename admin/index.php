@@ -106,9 +106,11 @@ if(!isset($_SESSION['username'])) {
 
   						<div class="span6">
   							<ul> <h3>
-  								<li><a href="events.php">events</a></li>
+  								<li><a href="events.php">EVENTS</a></li>
   								<br>
-  								<li><a href="add_event.php">add event</a></li>
+                  <li><a href="add_event.php">ADD EVENT</a></li>
+                  <br>
+  								<li><a href="users_info.php">USERS</a></li>
   								</h3>
   							</ul>
   						</div>

@@ -112,27 +112,29 @@ if(!isset($_SESSION['username'])) {
 
       <table class="table table-bordered">
         <tr>
-         <td>title</td>
-         <td>data</td>
-         <td>content</td>
-         <td>participants</td>
-         <td>option</td>
+         <td>USER NAME</td>
+         <td>PASSWORD</td>
+         <td>EMAIL</td>
+         <td>ADDRESS</td>
+         <td>PHONE</td>
+         <td>OPTION</td>
        </tr>
        <?php 
 
       $connect=mysqli_connect("localhost","root","" , "event_task") or die ("couldn't connect!");
 
-      $events = mysqli_query($connect, "SELECT * FROM events");
+      $events = mysqli_query($connect, "SELECT * FROM users");
 
       while ($event = mysqli_fetch_assoc($events)) {
         extract($event);
         echo "<tr>
-         <td>".$title."</td>
-         <td>".$when."</td>
-         <td>".$content."</td>
-         <td><a href='event_ppl.php?id=".$id."'> view_participants</a></td>
-         <td><a href='delete_event.php?id=".$id."'>DELETE</a></td>
-         <td><a href='edit_event.php?id=".$id."'>EDIT</a></td>
+         <td>".$username."</td>
+         <td>".$password."</td>
+         <td>".$email."</td>
+         <td>".$address."</td>
+         <td>".$phone."</td>
+         <td><a href='delete_user.php?id=".$id."'>DELETE</a></td>
+         
 
        </tr>";
       }
