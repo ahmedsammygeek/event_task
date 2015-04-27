@@ -1,7 +1,7 @@
 <?php  session_start();
 
 if(!isset($_GET['event_id'])) {
-	die("error happend pelse try again");
+	die("error happend please try again");
 } 
 
 $event_id = $_GET['event_id'];
@@ -38,11 +38,23 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $user_id = $_SESSION['user_id'];
 $query = mysqli_query($connect, "INSERT INTO even_users VALUES('' , '$event_id' , '$username' , '$email'
- , '$phone' , '$user_id')");
+	, '$phone' , '$user_id')");
 if($query) {
-	echo "done , you now had registered to the event , go to ";
-	echo "<a href='users/profile.php'> you profile</a>";
-	die();
+	$reach=$event['reached'];
+	$query2=mysqli_query($connect,"UPDATE events SET reached=$reach + 1 WHERE id='$event_id' ");
+	if ($query2) {
+		echo "done , you now had registered to the event , go to ";
+		echo "<a href='users/profile.php'> you profile</a>";
+		echo "<p>$username</p>";
+		echo "<p>$phone</p>";
+		echo "<p>$email</p>";
+		die();
+	}
+	else
+	{
+		echo mysqli_error($connect);
+	}
+	
 }
 
 else {
