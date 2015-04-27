@@ -89,13 +89,11 @@ $user_id=$_SESSION['user_id'] ;
        </a>
        <div class="nav-collapse collapse">
          <ul class="nav">
-<<<<<<< HEAD
+
           <li><a class="active" href="profile.php">Home</a></li>
-=======
->>>>>>> 699f1613cbd0a32a65d2eb3afae09972e586cda7
           <li ><a href="../events.php">events</a></li>
           <li ><a href="logout.php">logout</a></li>
-          <li ><a href="profile.php">profile</a></li>
+          
 
 
         </ul>

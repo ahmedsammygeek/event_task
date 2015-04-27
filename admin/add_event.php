@@ -79,8 +79,9 @@ if(!isset($_SESSION['username'])) {
        </a>
        <div class="nav-collapse collapse">
          <ul class="nav">
-          <li><a class="active" href="index.html">Home</a></li>
-          <li ><a href="about.html">About</a></li>
+         <li><a class="active" href="index.php">Home</a></li>
+          <li ><a href="users_info.php">users</a></li>
+          <li ><a href="events.php">events</a></li>
 
 
         </ul>

@@ -51,129 +51,130 @@ $query=mysqli_query($connect ,"SELECT * FROM even_users where event_id ='$event_
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
 
-  </head>
-  <body>
+    </head>
+    <body>
 
-  	<!--start: Wrapper -->
-  	<div id="wrapper">
+     <!--start: Wrapper -->
+     <div id="wrapper">
 
-  		<!--start: Container -->
-  		<div class="container">
-
-
-  			<!--start: Header -->
-  			<header>
-
-  				<!--start: Row -->
-  				<div class="row">
-
-  					<!--start: Logo -->
-  					<div class="logo span4">
-
-  					</div>
-  					<!--end: Logo -->
+      <!--start: Container -->
+      <div class="container">
 
 
+       <!--start: Header -->
+       <header>
 
-  				</div>
-  				<!--end: Row -->
+        <!--start: Row -->
+        <div class="row">
 
-  			</header>
-  			<!--end: Header-->
+         <!--start: Logo -->
+         <div class="logo span4">
 
-  			<!--start: Navigation-->	
-  			<div class="navbar navbar-inverse">
-  				<div class="navbar-inner">
-  					<div class="container">
-  						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-  							<span class="icon-bar"></span>
-  							<span class="icon-bar"></span>
-  							<span class="icon-bar"></span>
-  						</a>
-  						<div class="nav-collapse collapse">
-  							<ul class="nav">
-  								<li><a class="active" href="index.html">Home</a></li>
-  								<li ><a href="about.html">About</a></li>
-
-
-  							</ul>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-  			<!--end: Navigation-->
-
-  		</div>
-  		<!--end: Container-->
-
-  		<!--start: Container -->
-  		<div class="container">
-
-  			<!--start: Row -->
-  			<div class="row">
-
-  				<div class="row">
-
-  					<!-- start: Icon Boxes -->
-  					<div class="icons-box-vert-container">
+         </div>
+         <!--end: Logo -->
 
 
 
-  						<!-- start: Icon Box Start -->
-  						<div class="span12">
+       </div>
+       <!--end: Row -->
 
-  							<table class="table table-bordered">
-  								<tr>
-  									<td>#</td>
-  									<td>username</td>
-  									<td>email</td>
-  									<td>phone</td>
-  								</tr>
-  								<?php 
-  								$i = 0;
-  								while ($user = mysqli_fetch_assoc($query)) {
-  									$i = $i + 1;
-  									echo '<tr>
-  									<td>'.$i.'</td>
-  									<td>'.$user['username'].'</td>
-  									<td>'.$user['email'].'</td>
-  									<td>'.$user['phone'].'</td>
-  									
-   								</tr>';
-  								}
+     </header>
+     <!--end: Header-->
 
-  								 ?>
-  								
-
-  							</table>
-
-  						</div>
-  						<!-- end: Icon Box -->
+     <!--start: Navigation-->	
+     <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+       <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </a>
+       <div class="nav-collapse collapse">
+         <ul class="nav">
+          <li><a class="active" href="index.php">Home</a></li>
+          <li ><a href="users_info.php">users</a></li>
+          <li ><a href="events.php">events</a></li>
 
 
-  					</div>
-  					<!-- end: Icon Boxes -->
-  					<div class="clear"></div>
-  				</div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end: Navigation-->
+
+</div>
+<!--end: Container-->
+
+<!--start: Container -->
+<div class="container">
+
+ <!--start: Row -->
+ <div class="row">
+
+  <div class="row">
+
+   <!-- start: Icon Boxes -->
+   <div class="icons-box-vert-container">
 
 
-  			</div>
-  			<!--end: Row-->
 
-  		</div>
-  		<!--end: Container-->
+    <!-- start: Icon Box Start -->
+    <div class="span12">
 
-  		<!--start: Container -->
-  		<div class="container">	
-  			<hr>
-  			<hr>
-  		</div>
-  		<!-- end: Container  -->
+     <table class="table table-bordered">
+      <tr>
+       <td>#</td>
+       <td>username</td>
+       <td>email</td>
+       <td>phone</td>
+     </tr>
+     <?php 
+     $i = 0;
+     while ($user = mysqli_fetch_assoc($query)) {
+       $i = $i + 1;
+       echo '<tr>
+       <td>'.$i.'</td>
+       <td>'.$user['username'].'</td>
+       <td>'.$user['email'].'</td>
+       <td>'.$user['phone'].'</td>
+       
+       </tr>';
+     }
 
-  	</div>
-  	<!-- end: Wrapper  -->
-  	<!--  -->
-  	<!-- end: Java Script -->
+     ?>
+     
 
-  </body>
-  </html>
+   </table>
+
+ </div>
+ <!-- end: Icon Box -->
+
+
+</div>
+<!-- end: Icon Boxes -->
+<div class="clear"></div>
+</div>
+
+
+</div>
+<!--end: Row-->
+
+</div>
+<!--end: Container-->
+
+<!--start: Container -->
+<div class="container">	
+ <hr>
+ <hr>
+</div>
+<!-- end: Container  -->
+
+</div>
+<!-- end: Wrapper  -->
+<!--  -->
+<!-- end: Java Script -->
+
+</body>
+</html>
