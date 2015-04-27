@@ -1,5 +1,5 @@
 <?php session_start();
-$id=$_SESSION['user_id'] ;
+$user_id=$_SESSION['user_id'] ;
 
 ?>
 
@@ -81,7 +81,7 @@ $id=$_SESSION['user_id'] ;
        <div class="nav-collapse collapse">
          <ul class="nav">
           <li><a class="active" href="index.php">Home</a></li>
-          <li ><a href="events.php">events</a></li>
+          <li ><a href="../events.php">events</a></li>
           <li ><a href="logout.php">logout</a></li>
 
 
@@ -112,7 +112,7 @@ $id=$_SESSION['user_id'] ;
     <div class="span12">
       <?php 
       $connect=mysqli_connect("localhost","root","" , "event_task") or die ("couldn't connect!");
-      $query=mysqli_query($connect ,"SELECT * FROM users where id=$id");
+      $query=mysqli_query($connect ,"SELECT * FROM users where id=$user_id");
       $user = mysqli_fetch_assoc($query);
       extract($user);
 
@@ -138,13 +138,49 @@ $id=$_SESSION['user_id'] ;
         <br>
         <button type="submit" class="btn">update</button>
       </form>
+         <table class="table table-bordered">
+      <tr>
+       <td>title</td>
+       <td>data</td>
+       <td>content</td>
+       <td>option</td>
+     </tr>
+     <?php 
+
+     $query2=mysqli_query($connect,"SELECT event_id FROM even_users WHERE user_id='$user_id'");
+     while ($row=mysqli_fetch_assoc($query2)) {
+      extract($row);
+      $query3=mysqli_query($connect,"SELECT * FROM events WHERE id ='$event_id' ");
+      $row2=mysqli_fetch_assoc($query3);
+      extract($row2);
+        echo "<tr>
+      <td>".$title."</td>
+      <td>".$when."</td>
+      <td>".$content."</td>
+      <td><a href='cancel_event.php?user_id=".$user_id."&event_id=".$event_id."'>DELETE</a></td>
+      </tr>";
+
+    }
+
+
+
+
+
+    ?>
+    
+
+  </table>
     </div>
     <!-- end: Icon Box -->
 
 
-  </div>
-  <!-- end: Icon Boxes -->
-  <div class="clear"></div>
+
+
+</div>
+<!-- end: Icon Boxes -->
+<div class="clear">
+
+</div>
 </div>
 
 
