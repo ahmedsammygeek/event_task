@@ -133,9 +133,22 @@ if(isset($_GET['id'])) {
 
    </table>
 
+
    <?php
 
-   if($event['limit'] != $event['reached']) {
+$date1 = date("Y-m-d");
+$date2 = $event['when'];
+
+
+$diff = abs(strtotime($date2) - strtotime($date1));
+
+$years = floor($diff / (365*60*60*24));
+$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+
+
+
+   if($event['limit'] != $event['reached'] && $days > 0) {
 
     ?>
 
