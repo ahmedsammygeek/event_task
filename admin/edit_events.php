@@ -7,7 +7,7 @@ if(!isset($_SESSION['username'])) {
   die("you can't go here unless you login <a href='login.php'>login page</a>");
 }
 
- ?>
+?>
 
 
 <!DOCTYPE html>
@@ -108,28 +108,41 @@ if(!isset($_SESSION['username'])) {
 
     <!-- start: Icon Box Start -->
     <div class="span12">
+      <?php 
+      if (isset($_GET['id'])) {
+       $id=$_GET['id'];
+       $connect=mysqli_connect("localhost","root","" , "event_task") or die ("couldn't connect!");
+
+       $events = mysqli_query($connect, "SELECT * FROM events");
+
+       while ($event = mysqli_fetch_assoc($events)) {
+        extract($event);
+
+
+      } 
+      ?>
       
       <form  action="insert_event.php" method="post">
-                <label for="">title</label>
-                <input type="text" name="title" ><br>
-                <label for="">content</label>
-                <textarea name="content" id="" cols="30" rows="10"></textarea>
-                <label for="">date</label>
-                <input type="date" name="date" ><br>
-                <br>
-                <label for="">limit</label>
-                <input type="number" name="limit" ><br>
-                <br>
-                <button type="submit" class="btn">going</button>
-              </form>
+        <label for="">title</label>
+        <input type="text" name="title" ><br>
+        <label for="">content</label>
+        <textarea name="content" id="" cols="30" rows="10"></textarea>
+        <label for="">date</label>
+        <input type="date" name="date" ><br>
+        <br>
+        <label for="">limit</label>
+        <input type="number" name="limit" ><br>
+        <br>
+        <button type="submit" class="btn">going</button>
+      </form>
 
-   </div>
-   <!-- end: Icon Box -->
+    </div>
+    <!-- end: Icon Box -->
 
 
- </div>
- <!-- end: Icon Boxes -->
- <div class="clear"></div>
+  </div>
+  <!-- end: Icon Boxes -->
+  <div class="clear"></div>
 </div>
 
 

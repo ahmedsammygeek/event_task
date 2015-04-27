@@ -1,4 +1,12 @@
-<?php 	
+<?php session_start();
+
+
+if(!isset($_SESSION['username'])) {
+
+
+	die("you can't go here unless you login <a href='login.php'>login page</a>");
+}
+ 	
 if (!empty($_POST['title'])) {
 	$title=$_POST['title'];
 	if (!empty($_POST['content'])) {

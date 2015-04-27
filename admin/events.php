@@ -1,3 +1,15 @@
+<?php session_start();
+
+
+if(!isset($_SESSION['username'])) {
+
+
+  die("you can't go here unless you login <a href='login.php'>login page</a>");
+}
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,11 +124,14 @@
       $events = mysqli_query($connect, "SELECT * FROM events");
 
       while ($event = mysqli_fetch_assoc($events)) {
+        extract($event);
         echo "<tr>
-         <td>".$event['title']."</td>
-         <td>".$event['when']."</td>
-         <td>".$event['content']."</td>
-         <td><a href='event_ppl.php?id=".$event['id']."'> view_participants</a></td>
+         <td>".$title."</td>
+         <td>".$when."</td>
+         <td>".$content."</td>
+         <td><a href='event_ppl.php?id=".$id."'> view_participants</a></td>
+         <td><a href='delete_event.php?id=".$id."'>DELETE</a></td>
+         <td><a href='edit_event.php?id=".$id."'>EDIT</a></td>
 
        </tr>";
       }
