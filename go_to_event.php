@@ -39,10 +39,9 @@ $email = $_POST['email'];
 $user_id = $_SESSION['user_id'];
 $query = mysqli_query($connect, "INSERT INTO even_users VALUES('' , '$event_id' , '$username' , '$email'
  , '$phone' , '$user_id')");
-
-
 if($query) {
-	echo "done , you now had registered to the event";
+	echo "done , you now had registered to the event , go to ";
+	echo "<a href='users/profile.php'> you profile</a>";
 	die();
 }
 

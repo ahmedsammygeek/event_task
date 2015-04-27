@@ -1,9 +1,5 @@
 <?php
  session_start();
-
-
-
-
 if (!empty($_POST['username'])) {
 	$username=$_POST['username'];
 	if (!empty($_POST['password'])) {

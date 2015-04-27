@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2015 at 11:42 PM
+-- Generation Time: Apr 27, 2015 at 04:07 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `content`, `limit`, `reached`, `when`) VALUES
-(1, 'event number 1', 'content about event number 1 here ', 11, 2, '2015-04-08'),
-(2, 'event number 2', 'content of event number 2', 90, 80, '2015-04-01'),
-(3, 'event number 3', 'content of event number 3', 100, 120, '2015-04-08');
+(1, 'event number 1', 'content about event number 1 here content about event number 1 here content about event number 1 here content about event number 1 here content about event number 1 here content about event number 1 here ', 11, 11, '2015-04-08'),
+(2, 'event number 2', 'content of event number 2content of event number 2content of event number 2content of event number 2', 90, 80, '2015-04-01'),
+(3, 'event number 3', 'content of event number 3 content of event number 3  content of event number 3  content of event number 3  content of event number 3', 100, 120, '2015-04-08');
 
 -- --------------------------------------------------------
 
@@ -74,9 +74,26 @@ INSERT INTO `events` (`id`, `title`, `content`, `limit`, `reached`, `when`) VALU
 CREATE TABLE IF NOT EXISTS `even_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `event_id` int(11) NOT NULL,
+  `username` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `phone` varchar(40) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `even_users`
+--
+
+INSERT INTO `even_users` (`id`, `event_id`, `username`, `email`, `phone`, `user_id`) VALUES
+(1, 2, 'klk', 'klklkklklk', 'klk', 1),
+(2, 2, 'klk', 'klklkklklk', 'klk', 1),
+(3, 2, 'klk', 'klklkklklk', 'klk', 1),
+(4, 2, 'klk', 'klklkklklk', 'klk', 1),
+(5, 2, 'klk', 'klklkklklk', 'klk', 1),
+(6, 2, 'klk', 'klklkklklk', 'klk', 1),
+(7, 2, 'klk', 'klklkklklk', 'klk', 1),
+(8, 2, 'klk', 'klklkklklk', 'klk', 1);
 
 -- --------------------------------------------------------
 
@@ -92,7 +109,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `address` varchar(300) NOT NULL,
   `phone` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `address`, `phone`) VALUES
+(1, 'ahmed', 'ahmed', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
