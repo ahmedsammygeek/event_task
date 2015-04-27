@@ -103,10 +103,10 @@
                 <label for="">content</label>
                 <textarea name="content" id="" cols="30" rows="10"></textarea>
                 <label for="">date</label>
-                <input type="date" name="phone" ><br>
+                <input type="date" name="date" ><br>
                 <br>
                 <label for="">limit</label>
-                <input type="number" name="phone" ><br>
+                <input type="number" name="limit" ><br>
                 <br>
                 <button type="submit" class="btn">going</button>
               </form>
