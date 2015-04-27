@@ -1,4 +1,13 @@
 <?php session_start();
+
+
+if(!isset($_SESSION['username'])) {
+
+
+  die("you can't go here unless you login <a href='login.php'>login page</a>");
+}
+
+
 $user_id=$_SESSION['user_id'] ;
 
 ?>
@@ -80,9 +89,13 @@ $user_id=$_SESSION['user_id'] ;
        </a>
        <div class="nav-collapse collapse">
          <ul class="nav">
+<<<<<<< HEAD
           <li><a class="active" href="profile.php">Home</a></li>
+=======
+>>>>>>> 699f1613cbd0a32a65d2eb3afae09972e586cda7
           <li ><a href="../events.php">events</a></li>
           <li ><a href="logout.php">logout</a></li>
+          <li ><a href="profile.php">profile</a></li>
 
 
         </ul>
@@ -138,40 +151,42 @@ $user_id=$_SESSION['user_id'] ;
         <br>
         <button type="submit" class="btn">update</button>
       </form>
-         <table class="table table-bordered">
-      <tr>
-       <td>title</td>
-       <td>data</td>
-       <td>content</td>
-       <td>option</td>
-     </tr>
-     <?php 
+      <table class="table table-bordered">
+        <tr>
+         <td>title</td>
+         <td>data</td>
+         <td>content</td>
+         <td>option</td>
+       </tr>
+       <?php 
 
-     $query2=mysqli_query($connect,"SELECT event_id FROM even_users WHERE user_id='$user_id'");
-     while ($row=mysqli_fetch_assoc($query2)) {
-      extract($row);
-      $query3=mysqli_query($connect,"SELECT * FROM events WHERE id ='$event_id' ");
-      $row2=mysqli_fetch_assoc($query3);
-      extract($row2);
+       $query2=mysqli_query($connect,"SELECT event_id FROM even_users WHERE user_id='$user_id'");
+       while ($row=mysqli_fetch_assoc($query2)) {
+        extract($row);
+        $query3=mysqli_query($connect,"SELECT * FROM events WHERE id ='$event_id' ");
+        $row2=mysqli_fetch_assoc($query3);
+        extract($row2);
         echo "<tr>
-      <td>".$title."</td>
-      <td>".$when."</td>
-      <td>".$content."</td>
-      <td><a href='cancel_event.php?user_id=".$user_id."&event_id=".$event_id."'>DELETE</a></td>
-      </tr>";
+        <td>".$title."</td>
+        <td>".$when."</td>
+        <td>".$content."</td>
+        <td><a href='cancel_event.php?user_id=".$user_id."&event_id=".$event_id."'>DELETE</a></td>
+        </tr>";
 
-    }
-
-
+      }
 
 
 
-    ?>
-    
 
-  </table>
-    </div>
-    <!-- end: Icon Box -->
+
+      ?>
+
+
+    </table>
+
+    <p><button><a href="excel.php">excel</a></button></p>
+  </div>
+  <!-- end: Icon Box -->
 
 
 
