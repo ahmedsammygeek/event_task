@@ -16,21 +16,29 @@ function cleanData(&$str)
 
 $flag = false;
 
-while ($row = mysqli_fetch_assoc($query)) {
-  if(!$flag) {
+
+$query2=mysqli_query($connect,"SELECT event_id FROM even_users WHERE user_id='$user_id'");
+while ($row=mysqli_fetch_assoc($query2)) {
+  extract($row);
+  $query3=mysqli_query($connect,"SELECT title , content , `when` FROM events WHERE id ='$event_id' ");
+  while ($row2=mysqli_fetch_assoc($query3)) {
+    extract($row2);
+    if(!$flag) {
       // display field/column names as first row
-    echo implode("\t", array_keys($row)) . "\r\n";
-    $flag = true;
+      echo implode("\t", array_keys($row2)) . "\r\n";
+      $flag = true;
+    }
+    array_walk($row, 'cleanData');
+    echo implode("\t", array_values($row2)) . "\r\n";
   }
-  array_walk($row, 'cleanData');
-  echo implode("\t", array_values($row)) . "\r\n";
 }
+
 
 
 $filename = "website_data_" . date('Ymd') . ".xls";
 
-  header("Content-Disposition: attachment; filename=\"$filename\"");
-  header("Content-Type: application/vnd.ms-excel");
+header("Content-Disposition: attachment; filename=\"$filename\"");
+header("Content-Type: application/vnd.ms-excel");
 
 exit;
 ?>
