@@ -71,8 +71,9 @@
   						</a>
   						<div class="nav-collapse collapse">
   							<ul class="nav">
-  								<li><a class="active" href="index.php">Home</a></li>
-  								<li ><a href="about.html">About</a></li>
+  								<li><a class="active" href="events.php">events</a></li>
+                  <li ><a href="users/profile.php">profile</a></li>
+  						
 
 
   							</ul>

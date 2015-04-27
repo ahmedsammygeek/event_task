@@ -85,8 +85,9 @@ if(isset($_GET['id'])) {
        </a>
        <div class="nav-collapse collapse">
          <ul class="nav">
-          <li><a class="active" href="index.html">Home</a></li>
-          <li ><a href="about.html">About</a></li>
+          <li><a class="active" href="events.php">events</a></li>
+                  <li ><a href="users/profile.php">profile</a></li>
+                  <li ><a href="users/logout.php">logout</a></li>
 
 
         </ul>
@@ -136,19 +137,22 @@ if(isset($_GET['id'])) {
 
    <?php
 
-$date1 = date("Y-m-d");
-$date2 = $event['when'];
+$date1 = explode('-', date("Y-m-d"));
+$date2 = explode('-', $event['when']);
 
 
-$diff = abs(strtotime($date2) - strtotime($date1));
+// $diff = abs(strtotime($date2) - strtotime($date1));
 
-$years = floor($diff / (365*60*60*24));
-$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+// $years = floor($diff / (365*60*60*24));
+// $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+// $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+
+// echo $date1[2]-$date2[2]; die();
 
 
+   if(($event['limit'] != $event['reached']) && (($date1[2] - $date2[2])<= 0)) {
 
-   if($event['limit'] != $event['reached'] && $days > 0) {
+    
 
     ?>
 
