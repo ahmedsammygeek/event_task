@@ -75,7 +75,7 @@
           				</a>
           				<div class="nav-collapse collapse">
             				<ul class="nav">
-								<li><a class="active" href="index.html">Home</a></li>
+								<li><a class="active" href="index.php">Home</a></li>
 							    <li ><a href="about.html">About</a></li>
 								
               					
@@ -104,13 +104,13 @@
 
 					<!-- start: Icon Box Start -->
 					<div class="span6">
-						<a href="">
+						<a href="users/register.html">
 							<div class="icons-box-vert">
 							
 							<div class="icons-box-vert-info">
-								<h3>Best choice</h3>
+								<h3>register now</h3>
 								
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								<p>free register to be with us and can share events.</p>
 							<p> 22/09/2015</p>
 							</div>
 							<div class="clear"></div>
@@ -119,13 +119,13 @@
 					</div>
 
 					<div class="span6">
-						<a href="">
+						<a href="users/login.php">
 							<div class="icons-box-vert">
 							
 							<div class="icons-box-vert-info">
-								<h3>Best choice</h3>
+								<h3>login (members)</h3>
 								
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+								<p>login and go to your profile.</p>
 							<p> 22/09/2015</p>
 							</div>
 							<div class="clear"></div>

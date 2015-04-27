@@ -108,7 +108,7 @@ if(!isset($_SESSION['username'])) {
   							<ul> <h3>
   								<li><a href="events.php">events</a></li>
   								<br>
-  								<li><a href="add_event">add event</a></li>
+  								<li><a href="add_event.php">add event</a></li>
   								</h3>
   							</ul>
   						</div>
