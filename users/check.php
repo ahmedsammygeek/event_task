@@ -11,7 +11,7 @@ if (!empty($_POST['username'])) {
 		if ($numrows!=0) {
 			$_SESSION['username'] = $user['username'];
 			$_SESSION['user_id'] = $user['id'];
-			echo "welcome $username click here <a href=profil.php>goto your profil</a>";
+			echo "welcome $username click here <a href=profile.php>goto your profil</a>";
 		}
 		else
 		{
