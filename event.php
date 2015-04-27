@@ -1,3 +1,14 @@
+<?php 
+
+if(isset($_GET['id'])) {
+  $id = $_GET['id'];
+ $connect = mysqli_connect('localhost', "root", "", "event_task");
+ $events = mysqli_query($connect, "SELECT * FROM events WHERE id ='$id' ");
+ $event = mysqli_fetch_assoc($events);
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,132 +45,148 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
 
-  </head>
-  <body>
+    </head>
+    <body>
 
-  	<!--start: Wrapper -->
-  	<div id="wrapper">
+     <!--start: Wrapper -->
+     <div id="wrapper">
 
-  		<!--start: Container -->
-  		<div class="container">
-
-
-  			<!--start: Header -->
-  			<header>
-
-  				<!--start: Row -->
-  				<div class="row">
-
-  					<!--start: Logo -->
-  					<div class="logo span4">
-
-  					</div>
-  					<!--end: Logo -->
+      <!--start: Container -->
+      <div class="container">
 
 
+       <!--start: Header -->
+       <header>
 
-  				</div>
-  				<!--end: Row -->
+        <!--start: Row -->
+        <div class="row">
 
-  			</header>
-  			<!--end: Header-->
+         <!--start: Logo -->
+         <div class="logo span4">
 
-  			<!--start: Navigation-->	
-  			<div class="navbar navbar-inverse">
-  				<div class="navbar-inner">
-  					<div class="container">
-  						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-  							<span class="icon-bar"></span>
-  							<span class="icon-bar"></span>
-  							<span class="icon-bar"></span>
-  						</a>
-  						<div class="nav-collapse collapse">
-  							<ul class="nav">
-  								<li><a class="active" href="index.html">Home</a></li>
-  								<li ><a href="about.html">About</a></li>
-
-
-  							</ul>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-  			<!--end: Navigation-->
-
-  		</div>
-  		<!--end: Container-->
-
-  		<!--start: Container -->
-  		<div class="container">
-
-  			<!--start: Row -->
-  			<div class="row">
-
-  				<div class="row">
-
-  					<!-- start: Icon Boxes -->
-  					<div class="icons-box-vert-container">
+         </div>
+         <!--end: Logo -->
 
 
 
-  						<!-- start: Icon Box Start -->
-  						<div class="span12">
+       </div>
+       <!--end: Row -->
 
-  							<table class="table table-bordered">
-  								<tr>
-  									<td>title</td>
-  									<td>lorem ipusm</td>
-  								</tr>
-  								<tr>
-  									<td>date</td>
-  									<td>22/44/1903</td>
-  								</tr>
+     </header>
+     <!--end: Header-->
 
-  								<tr>
-  									<td>content</td>
-  									<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet molestiae porro vero alias quis doloremque voluptates laborum tempore nobis consectetur, sed aspernatur cupiditate optio nemo, non aperiam earum neque illum.</td>
-  								</tr>
-
-
-  							</table>
-
-						<form  action="go_to_event.php?event_id=<?php echo $_GET['id']; ?>" method="post">
-  							<label for="">username</label>
-  							<input type="text" name="username" ><br>
-  							<label for="">email</label>
-  							<input type="text" name="email" ><br>
-  							<label for="">phone</label>
-  							<input type="text" name="phone" ><br>
-  							<br>
-  							<button type="submit" class="btn">going</button>
-  						</form>
-  						</div>
-  						<!-- end: Icon Box -->
-  						
-
-  					</div>
-  					<!-- end: Icon Boxes -->
-  					<div class="clear"></div>
-  				</div>
+     <!--start: Navigation-->	
+     <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+       <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </a>
+       <div class="nav-collapse collapse">
+         <ul class="nav">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li ><a href="about.html">About</a></li>
 
 
-  			</div>
-  			<!--end: Row-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end: Navigation-->
 
-  		</div>
-  		<!--end: Container-->
+</div>
+<!--end: Container-->
 
-  		<!--start: Container -->
-  		<div class="container">	
-  			<hr>
-  			<hr>
-  		</div>
-  		<!-- end: Container  -->
+<!--start: Container -->
+<div class="container">
 
-  	</div>
-  	<!-- end: Wrapper  -->
-  	<!--  -->
-  	<!-- end: Java Script -->
+ <!--start: Row -->
+ <div class="row">
 
-  </body>
-  </html>
+  <div class="row">
+
+   <!-- start: Icon Boxes -->
+   <div class="icons-box-vert-container">
+
+
+
+    <!-- start: Icon Box Start -->
+    <div class="span12">
+
+     <table class="table table-bordered">
+      <tr>
+       <td>title</td>
+       <td><?php echo $event['title']; ?></td>
+     </tr>
+     <tr>
+       <td>date</td>
+       <td><?php echo $event['when']; ?></td>
+     </tr>
+
+     <tr>
+       <td>content</td>
+       <td><?php echo $event['content']; ?></td>
+     </tr>
+
+
+   </table>
+
+   <?php
+
+   if($event['limit'] != $event['reached']) {
+
+    ?>
+
+   <form  action="go_to_event.php?event_id=<?php echo $_GET['id']; ?>" method="post">
+     <label for="">username</label>
+     <input type="text" name="username" ><br>
+     <label for="">email</label>
+     <input type="text" name="email" ><br>
+     <label for="">phone</label>
+     <input type="text" name="phone" ><br>
+     <br>
+     <button type="submit" class="btn">going</button>
+   </form>
+
+<?php    }
+
+else {
+   echo "<h2>sorry thie event now is reached the max ppl you can't register it </h2>";
+}
+
+ 
+
+    ?>
+ </div>
+ <!-- end: Icon Box -->
+
+
+</div>
+<!-- end: Icon Boxes -->
+<div class="clear"></div>
+</div>
+
+
+</div>
+<!--end: Row-->
+
+</div>
+<!--end: Container-->
+
+<!--start: Container -->
+<div class="container">	
+ <hr>
+ <hr>
+</div>
+<!-- end: Container  -->
+
+</div>
+<!-- end: Wrapper  -->
+<!--  -->
+<!-- end: Java Script -->
+
+</body>
+</html>
