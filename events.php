@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<!-- start: Meta -->
 	<meta charset="utf-8">
 	<title>events</title> 
@@ -9,11 +8,9 @@
 	<meta name="keywords" content="Template, Theme, web, html5, css3" />
 	<meta name="author" content="Łukasz Holeczek from creativeLabs"/>
 	<!-- end: Meta -->
-	
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- end: Mobile Specific -->
-	
 	<!-- start: Facebook Open Graph -->
 	<meta property="og:title" content=""/>
 	<meta property="og:description" content=""/>
@@ -21,7 +18,6 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:image" content=""/>
 	<!-- end: Facebook Open Graph -->
-
 	<!-- start: CSS -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
@@ -97,50 +93,35 @@
 
   				<div class="row">
 
+           
+
   					<!-- start: Icon Boxes -->
   					<div class="icons-box-vert-container">
-  						<div class="span6">
-  							<a href="">
-  								<div class="icons-box-vert">
-  								<i class="ico-cup  ico-white circle-color-full big-color"></i>
-  								<div class="icons-box-vert-info">
-  									<h3>Best choice</h3>
-  									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  								</div>
-  								<div class="clear"></div>
-  							</div>
-  						</a>
+               <?php 
+            $connect = mysqli_connect('localhost', "root", "", "event_task");
+            $events = mysqli_query($connect, "SELECT * FROM events");
 
-  						</div>
+            while ($event = mysqli_fetch_assoc($events)) {
+              echo '<div class="span8">
+                <a href="event.php?id='.$event['id'].'">
+                  <div class="icons-box-vert">
+                  <i class="ico-cup  ico-white circle-color-full big-color"></i>
+                  <div class="icons-box-vert-info">
+                    <h3>'.$event['title'].'</h3>
+                    <p>'.$event['content'].'</p>
+                    <p>'.$event['when'].'</p>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </a>
 
-  						<div class="span6">
-  							<a href="">
-  								<div class="icons-box-vert">
-  								<i class="ico-cup  ico-white circle-color-full big-color"></i>
-  								<div class="icons-box-vert-info">
-  									<h3>Best choice</h3>
-  									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  								</div>
-  								<div class="clear"></div>
-  							</div>
-  						</a>
+              </div>';
+            }
 
-  						</div>
+             ?>
+  						
 
 
-  						<div class="span6">
-  							<a href="">
-  								<div class="icons-box-vert">
-  								<i class="ico-cup  ico-white circle-color-full big-color"></i>
-  								<div class="icons-box-vert-info">
-  									<h3>Best choice</h3>
-  									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  								</div>
-  								<div class="clear"></div>
-  							</div>
-  						</a>
-
-  						</div>
   					</div>
   					<!-- end: Icon Boxes -->
   					<div class="clear"></div>
