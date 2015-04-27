@@ -80,7 +80,7 @@ $user_id=$_SESSION['user_id'] ;
        </a>
        <div class="nav-collapse collapse">
          <ul class="nav">
-          <li><a class="active" href="index.php">Home</a></li>
+          <li><a class="active" href="profile.php">Home</a></li>
           <li ><a href="../events.php">events</a></li>
           <li ><a href="logout.php">logout</a></li>
 

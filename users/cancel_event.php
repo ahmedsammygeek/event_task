@@ -12,7 +12,18 @@ if (isset($_GET['user_id'])) {
 	$connect=mysqli_connect("localhost","root","" , "event_task") or die ("couldn't connect!");
 		$query2=mysqli_query($connect,"DELETE FROM even_users WHERE event_id='$event_id' && user_id='$user_id' ");
 		if ($query2) {
-		echo "event canceled <a href=profile.php>go back!</a>";
+			$query=mysqli_query($connect,"SELECT reached FROM events WHERE id='$event_id' ");
+			$row=mysqli_fetch_assoc($query);
+			extract($row);
+			$query3=mysqli_query($connect,"UPDATE events SET reached=$reached-1 WHERE id='$event_id' ");
+			if ($query3) {
+				echo "event canceled <a href=profile.php>go back!</a>";
+			}
+			else
+			{
+				echo "an error in update";
+			}
+		
 	}
 	else
 	{
