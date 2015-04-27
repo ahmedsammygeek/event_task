@@ -23,9 +23,9 @@
 	<!-- end: Facebook Open Graph -->
 
 	<!-- start: CSS -->
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
 	
 	<!-- end: CSS -->
 

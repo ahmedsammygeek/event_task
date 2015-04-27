@@ -5,7 +5,6 @@ if(isset($_GET['id'])) {
  $connect = mysqli_connect('localhost', "root", "", "event_task");
  $events = mysqli_query($connect, "SELECT * FROM events WHERE id ='$id' ");
  $event = mysqli_fetch_assoc($events);
-
 }
 ?>
 

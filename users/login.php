@@ -1,13 +1,4 @@
-<?php session_start();
 
-
-if(!isset($_SESSION['username'])) {
-
-
-  die("you can't go here unless you login <a href='login.php'>login page</a>");
-}
-
- ?>
 
 <!DOCTYPE html>
 <html lang="en">
