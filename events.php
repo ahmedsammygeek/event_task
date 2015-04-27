@@ -97,50 +97,35 @@
 
   				<div class="row">
 
+           
+
   					<!-- start: Icon Boxes -->
   					<div class="icons-box-vert-container">
-  						<div class="span6">
-  							<a href="">
-  								<div class="icons-box-vert">
-  								<i class="ico-cup  ico-white circle-color-full big-color"></i>
-  								<div class="icons-box-vert-info">
-  									<h3>Best choice</h3>
-  									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  								</div>
-  								<div class="clear"></div>
-  							</div>
-  						</a>
+               <?php 
+            $connect = mysqli_connect('localhost', "root", "", "event_task");
+            $events = mysqli_query($connect, "SELECT * FROM events");
 
-  						</div>
+            while ($event = mysqli_fetch_assoc($events)) {
+              echo '<div class="span8">
+                <a href="event.php?id='.$event['id'].'">
+                  <div class="icons-box-vert">
+                  <i class="ico-cup  ico-white circle-color-full big-color"></i>
+                  <div class="icons-box-vert-info">
+                    <h3>'.$event['title'].'</h3>
+                    <p>'.$event['content'].'</p>
+                    <p>'.$event['when'].'</p>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </a>
 
-  						<div class="span6">
-  							<a href="">
-  								<div class="icons-box-vert">
-  								<i class="ico-cup  ico-white circle-color-full big-color"></i>
-  								<div class="icons-box-vert-info">
-  									<h3>Best choice</h3>
-  									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  								</div>
-  								<div class="clear"></div>
-  							</div>
-  						</a>
+              </div>';
+            }
 
-  						</div>
+             ?>
+  						
 
 
-  						<div class="span6">
-  							<a href="">
-  								<div class="icons-box-vert">
-  								<i class="ico-cup  ico-white circle-color-full big-color"></i>
-  								<div class="icons-box-vert-info">
-  									<h3>Best choice</h3>
-  									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  								</div>
-  								<div class="clear"></div>
-  							</div>
-  						</a>
-
-  						</div>
   					</div>
   					<!-- end: Icon Boxes -->
   					<div class="clear"></div>
